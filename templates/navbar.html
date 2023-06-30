@@ -1,7 +1,7 @@
 <!-- 네비게이션바 -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
     <div class="container-fluid">
-        <a class="navbar-brand" href="{% url 'pybo:index' %}">Pybo</a>
+        <a class="navbar-brand" href="{% url 'ReRAM:index' %}">ReRAM</a>
         <button class="navbar-toggler" type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent"
@@ -14,14 +14,17 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     {% if user.is_authenticated %}
-                    <a class="nav-link" href="{% url 'common:logout' %}">{{ user.username }} (로그아웃)</a>
+                    <a class="nav-link" href="{% url 'common:logout' %}">{{ user.username }} (logout)</a>
                     {% else %}
-                    <a class="nav-link" href="{% url 'common:login' %}">로그인</a>
+                    <a class="nav-link" href="{% url 'common:login' %}">login</a>
                     {% endif %}
                 </li>
                 <li>
                     {% if not user.is_authenticated %}
-                    <a class="nav-link" href="{% url 'common:signup' %}">회원가입</a>
+                    <a class="nav-link" href="{% url 'common:signup' %}">signup</a>
                     {% endif %}
                 </li>
-            </u
+            </ul>
+        </div>
+    </div>
+</nav>

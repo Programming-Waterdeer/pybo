@@ -1,0 +1,10 @@
+<!-- Sidebar  -->
+<br>
+<nav id="sidebar" >
+    <div class="list-group">
+<a class="rounded-0 list-group-item list-group-item-action list-group-item-light {% if category.name == 'hafnium'  %}active{% endif %}" href="{% url 'ReRAM:index' 'Hafnium' %}">Hafnium Oxide</a>
+    <ul class="my-3 small" style="padding-left:2em;">
+        <li class="my-1"><a {% if category.name == 'La Doped HFO2 '  %}active{% endif %}" href="{% url 'ReRAM:index' 'La Doped HFO2 ' %}">La doped HfO2</a></li>
+    </div>
+</nav>
+

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class = 'col-md-2'>
+            {% include "ReRAM/sidebar.html" %}
+        </div>
+    <div class = 'col-md-10'>
+        <h5 class="my-3 border-bottom pb-2">[{{ category.name }}] POST </h5>
+        <div class="container my-3">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.media}}
+                {% for field in form %}
+                <div class="row justify-content-xl-center">
+                    <div><label for="{{ field.id_for_label }}" class="text-dark">{{ field.label }}: </label></div>
+                    {{ field }}
+
+                </div>
+                {% endfor %}
+                <small id="help" class="form-text text-muted">
+                        [File Upload]&nbsp;please make a zip file if you have multiple files.
+                </small>
+                <div class="row justify-content-center">
+                    <input type="submit" class="btn btn-info btn-lg" value="Create" />
+                </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+

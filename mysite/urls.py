@@ -24,12 +24,12 @@ from django.contrib.auth.decorators import login_required
 from django.views.decorators.cache import never_cache
 from ckeditor_uploader import views as ckeditor_views
 
-from pybo.views import base_views
+from ReRAM.views import base_views
 
-# from pybo import views
+# from ReRAM import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('pybo/', include('pybo.urls')),
+    path('ReRAM/', include('ReRAM.urls')),
     path('common/', include('common.urls')),
     path('', base_views.index, name='index'),  # '/' 에 해당되는 path
     path('admin/', admin.site.urls),
@@ -39,6 +39,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('ckeditor/upload/', login_required(ckeditor_views.upload), name='ckeditor_upload'),
     path('ckeditor/browse/', never_cache(login_required(ckeditor_views.browse)), name='ckeditor_browse'),
+    path('summernote/', include('django_summernote.urls')),
+
 ]
 
 if settings.DEBUG:

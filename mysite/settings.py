@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-t2t-h0$8l-a07_c^43-r-0un_69va15t5*m5f72o4bj%k3kk(b
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["130.83.204.76","127.0.0.1"]
 
 # Application definition
 
@@ -39,12 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'pybo.apps.PyboConfig',
+    'ReRAM.apps.ReRAMConfig',
     'ckeditor',
     'ckeditor_uploader',
     'grappelli',
     'filebrowser',
-
+    'django_summernote',
+    'mptt',
 
 ]
 
@@ -149,22 +150,21 @@ CKEDITOR_CONFIGS = {
     "default": {
         'toolbar': 'full',
         'height': 500,
-        'width': 1300,
-
-
-
+        'width': 'auto',
     }
 }
-EXTENSIONS = getattr(settings, "FILEBROWSER_EXTENSIONS", {
-    'Image': ['.jpg','.jpeg','.gif','.png','.tif','.tiff'],
-    'Document': ['.pdf','.doc','.rtf','.txt','.xls','.csv'],
-    'Video': ['.mov','.wmv','.mpeg','.mpg','.avi','.rm'],
-    'Audio': ['.mp3','.mp4','.wav','.aiff','.midi','.m4p']
-})
 
-SELECT_FORMATS = getattr(settings, "FILEBROWSER_SELECT_FORMATS", {
-    'file': ['Image','Document','Video','Audio'],
-    'image': ['Image'],
-    'document': ['Document'],
-    'media': ['Video','Audio'],
-})
+MPTT_ADMIN_LEVEL_INDENT = 5
+#EXTENSIONS = getattr(settings, "FILEBROWSER_EXTENSIONS", {
+#    'Image': ['.jpg','.jpeg','.gif','.png','.tif','.tiff'],
+#    'Document': ['.pdf','.doc','.rtf','.txt','.xls','.csv'],
+#    'Video': ['.mov','.wmv','.mpeg','.mpg','.avi','.rm'],
+#    'Audio': ['.mp3','.mp4','.wav','.aiff','.midi','.m4p']
+#})
+#
+#SELECT_FORMATS = getattr(settings, "FILEBROWSER_SELECT_FORMATS", {
+#    'file': ['Image','Document','Video','Audio'],
+#    'image': ['Image'],
+#    'document': ['Document'],
+#    'media': ['Video','Audio'],
+#})
