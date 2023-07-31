@@ -1,0 +1,151 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class = 'col-md-2'>
+            {% include "MBE/sidebar.html" %}
+        </div>
+    <div class = 'col-md-10'>
+        <h5 class="my-3 border-bottom pb-2">[{{ category.name }}] POST </h5>
+        <div class="container my-3">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.media}}
+                    <div class="row justify-content-xl-center">
+                        <div><label for="id_subject" class="text-dark">Subject: </label></div>
+                        <input type="text" name="subject" class="form-control" maxlength="200" required id="id_subject">
+                    </div>
+                {% if category.name == 'logbook' %}
+                    <div class="row justify-content-xl-center">
+                        <div><label for="id_content" class="text-dark">Content: </label></div>
+                        <div class="django-ckeditor-widget" data-field-id="id_content" style="display: inline-block;">
+    <textarea name="content" cols="40" rows="10" required id="id_content" data-processed="0" data-config="{&quot;skin&quot;: &quot;moono-lisa&quot;, &quot;toolbar_Basic&quot;: [[&quot;Source&quot;, &quot;-&quot;, &quot;Bold&quot;, &quot;Italic&quot;]], &quot;toolbar_Full&quot;: [[&quot;Styles&quot;, &quot;Format&quot;, &quot;Bold&quot;, &quot;Italic&quot;, &quot;Underline&quot;, &quot;Strike&quot;, &quot;SpellChecker&quot;, &quot;Undo&quot;, &quot;Redo&quot;], [&quot;Link&quot;, &quot;Unlink&quot;, &quot;Anchor&quot;], [&quot;Image&quot;, &quot;Flash&quot;, &quot;Table&quot;, &quot;HorizontalRule&quot;], [&quot;TextColor&quot;, &quot;BGColor&quot;], [&quot;Smiley&quot;, &quot;SpecialChar&quot;], [&quot;Source&quot;]], &quot;toolbar&quot;: &quot;full&quot;, &quot;height&quot;: 500, &quot;width&quot;: &quot;auto&quot;, &quot;filebrowserWindowWidth&quot;: 940, &quot;filebrowserWindowHeight&quot;: 725, &quot;filebrowserUploadUrl&quot;: &quot;/ckeditor/upload/&quot;, &quot;filebrowserBrowseUrl&quot;: &quot;/ckeditor/browse/&quot;, &quot;language&quot;: &quot;en-us&quot;}" data-external-plugin-resources="[]" data-id="id_content" data-type="ckeditortype">
+        <div style="width:80%">
+<table cellspacing="0" class="MsoTableGrid" style="border-collapse:collapse; border:none">
+	<tbody>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black; height:56px; vertical-align:top; width:208px">
+			<p><span style="font-size:11pt"><span style="font-family:&quot;Calibri&quot;,sans-serif"><strong><span dir="ltr" lang="EN-GB" style="font-size:11.5pt"><span style="font-family:Ebrima">Date:</span></span></strong></span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:1px solid black; height:56px; vertical-align:top; width:208px">
+			<p><span style="font-size:11pt"><span style="font-family:&quot;Calibri&quot;,sans-serif"><strong><span dir="ltr" lang="EN-GB" style="font-size:11.5pt"><span style="font-family:Ebrima">Sample ID:</span></span></strong></span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:1px solid black; height:56px; vertical-align:top; width:208px">
+			<p><span style="font-size:11pt"><span style="font-family:&quot;Calibri&quot;,sans-serif"><strong><span dir="ltr" lang="EN-GB" style="font-size:11.5pt"><span style="font-family:Ebrima">User:</span></span></strong></span></span></p>
+			</td>
+			<td style="border-bottom:none; border-left:none; border-right:none; border-top:none; height:56px; width:0px">&nbsp;</td>
+		</tr>
+		<tr>
+			<td rowspan="2" style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:33px; vertical-align:top; width:208px">
+			<p><span style="font-size:11pt"><span style="font-family:&quot;Calibri&quot;,sans-serif"><strong><span dir="ltr" lang="EN-GB" style="font-size:11.5pt"><span style="font-family:Ebrima">Substrate </span></span></strong></span></span></p>
+
+			<p><span style="font-size:11pt"><span style="font-family:&quot;Calibri&quot;,sans-serif"><strong><span dir="ltr" lang="EN-GB" style="font-size:11.5pt"><span style="font-family:Ebrima">(batch N&ordm;):</span></span></strong></span></span></p>
+			</td>
+			<td rowspan="3" style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:33px; vertical-align:top; width:208px">
+			<p><span style="font-size:11pt"><span style="font-family:&quot;Calibri&quot;,sans-serif"><strong><span dir="ltr" lang="EN-GB" style="font-size:11.5pt"><span style="font-family:Ebrima">Layout:</span></span></strong></span></span></p>
+
+			<p>&nbsp;</p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:33px; vertical-align:top; width:208px">
+			<p><span style="font-size:11pt"><span style="font-family:&quot;Calibri&quot;,sans-serif"><strong><span dir="ltr" lang="EN-GB" style="font-size:11.5pt"><span style="font-family:Ebrima">P<sub>gc</sub>:</span></span></strong></span></span></p>
+
+			<p>&nbsp;</p>
+			</td>
+			<td style="border-bottom:none; border-left:none; border-right:none; border-top:none; height:33px; width:0px">&nbsp;</td>
+		</tr>
+		<tr>
+			<td rowspan="2" style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:71px; vertical-align:top; width:208px">
+			<p><span style="font-size:11pt"><span style="font-family:&quot;Calibri&quot;,sans-serif"><strong><span dir="ltr" lang="EN-GB" style="font-size:11.5pt"><span style="font-family:Ebrima">T<sub>profile</sub>:</span></span></strong></span></span></p>
+			</td>
+			<td style="border-bottom:none; border-left:none; border-right:none; border-top:none; height:71px; width:0px">&nbsp;</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:54px; vertical-align:top; width:208px">
+			<p><span style="font-size:11pt"><span style="font-family:&quot;Calibri&quot;,sans-serif"><strong><span dir="ltr" lang="EN-GB" style="font-size:11.5pt"><span style="font-family:Ebrima">T<sub>set</sub></span></span></strong></span></span></p>
+
+			<p><span style="font-size:11pt"><span style="font-family:&quot;Calibri&quot;,sans-serif"><strong><span dir="ltr" lang="EN-GB" style="font-size:11.5pt"><span style="font-family:Ebrima">(T<sub>cal</sub>, output):</span></span></strong></span></span></p>
+			</td>
+			<td style="border-bottom:none; border-left:none; border-right:none; border-top:none; height:54px; width:0px">&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan="3" style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:61px; vertical-align:top; width:623px">
+			<p><span style="font-size:11pt"><span style="font-family:&quot;Calibri&quot;,sans-serif"><strong><span dir="ltr" lang="EN-GB" style="font-size:11.5pt"><span style="font-family:Ebrima">Source (rate, power):</span></span></strong></span></span></p>
+			</td>
+			<td style="border-bottom:none; border-left:none; border-right:none; border-top:none; height:61px; width:0px">&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan="3" style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:57px; vertical-align:top; width:623px">
+			<p><span style="font-size:11pt"><span style="font-family:&quot;Calibri&quot;,sans-serif"><strong><span dir="ltr" lang="EN-GB" style="font-size:11.5pt"><span style="font-family:Ebrima">Plasma: (N*/O*, power, flow):</span></span></strong></span></span></p>
+			</td>
+			<td style="border-bottom:none; border-left:none; border-right:none; border-top:none; height:57px; width:0px">&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:42px; vertical-align:top; width:415px">
+			<p><span style="font-size:11pt"><span style="font-family:&quot;Calibri&quot;,sans-serif"><strong><span dir="ltr" lang="EN-GB" style="font-size:11.5pt"><span style="font-family:Ebrima">Thickness:</span></span></strong></span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:42px; vertical-align:top; width:208px">
+			<p><span style="font-size:11pt"><span style="font-family:&quot;Calibri&quot;,sans-serif"><strong><span dir="ltr" lang="EN-GB" style="font-size:11.5pt"><span style="font-family:Ebrima">Total </span></span></strong></span></span></p>
+
+			<p><span style="font-size:11pt"><span style="font-family:&quot;Calibri&quot;,sans-serif"><strong><span dir="ltr" lang="EN-GB" style="font-size:11.5pt"><span style="font-family:Ebrima">thickness:</span></span></strong></span></span></p>
+			</td>
+			<td style="border-bottom:none; border-left:none; border-right:none; border-top:none; height:42px; width:0px">&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:51px; vertical-align:top; width:415px">
+			<p><span style="font-size:11pt"><span style="font-family:&quot;Calibri&quot;,sans-serif"><strong><span dir="ltr" lang="EN-GB" style="font-size:11.5pt"><span style="font-family:Ebrima">Pressure:</span></span></strong></span></span></p>
+
+			<p>&nbsp;</p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:51px; vertical-align:top; width:208px">
+			<p><span style="font-size:11pt"><span style="font-family:&quot;Calibri&quot;,sans-serif"><strong><span dir="ltr" lang="EN-GB" style="font-size:11.5pt"><span style="font-family:Ebrima">Total </span></span></strong></span></span></p>
+
+			<p><span style="font-size:11pt"><span style="font-family:&quot;Calibri&quot;,sans-serif"><strong><span dir="ltr" lang="EN-GB" style="font-size:11.5pt"><span style="font-family:Ebrima">time:</span></span></strong></span></span></p>
+			</td>
+			<td style="border-bottom:none; border-left:none; border-right:none; border-top:none; height:51px; width:0px">&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:47px; vertical-align:top; width:415px">
+			<p><span style="font-size:11pt"><span style="font-family:&quot;Calibri&quot;,sans-serif"><strong><span dir="ltr" lang="EN-GB" style="font-size:11.5pt"><span style="font-family:Ebrima">V<sub>out</sub>:</span></span></strong></span></span></p>
+			</td>
+			<td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:none; height:47px; vertical-align:top; width:208px">
+			<p><span style="font-size:11pt"><span style="font-family:&quot;Calibri&quot;,sans-serif"><strong><span dir="ltr" lang="EN-GB" style="font-size:11.5pt"><span style="font-family:Ebrima">Rotation:</span></span></strong></span></span></p>
+			</td>
+			<td style="border-bottom:none; border-left:none; border-right:none; border-top:none; height:47px; width:0px">&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan="3" style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:46px; vertical-align:top; width:623px">
+			<p><span style="font-size:11pt"><span style="font-family:&quot;Calibri&quot;,sans-serif"><strong><span dir="ltr" lang="EN-GB" style="font-size:11.5pt"><span style="font-family:Ebrima">RHEED:</span></span></strong></span></span></p>
+			</td>
+			<td style="border-bottom:none; border-left:none; border-right:none; border-top:none; height:46px; width:0px">&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan="3" style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:none; height:297px; vertical-align:top; width:623px">
+			<p><span style="font-size:11pt"><span style="font-family:&quot;Calibri&quot;,sans-serif"><strong><span dir="ltr" lang="EN-GB" style="font-size:11.5pt"><span style="font-family:Ebrima">Notes:</span></span></strong></span></span></p>
+			</td>
+			<td style="border-bottom:none; border-left:none; border-right:none; border-top:none; height:297px; width:0px">&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+    </textarea>
+</div>
+                    {% else %}
+                                        <div class="row justify-content-xl-center">
+                        <div><label for="id_content" class="text-dark">Content: </label></div>
+                        <div class="django-ckeditor-widget" data-field-id="id_content" style="display: inline-block;">
+                            <textarea name="content" cols="40" rows="10" required id="id_content" data-processed="0" data-config="{&quot;skin&quot;: &quot;moono-lisa&quot;, &quot;toolbar_Basic&quot;: [[&quot;Source&quot;, &quot;-&quot;, &quot;Bold&quot;, &quot;Italic&quot;]], &quot;toolbar_Full&quot;: [[&quot;Styles&quot;, &quot;Format&quot;, &quot;Bold&quot;, &quot;Italic&quot;, &quot;Underline&quot;, &quot;Strike&quot;, &quot;SpellChecker&quot;, &quot;Undo&quot;, &quot;Redo&quot;], [&quot;Link&quot;, &quot;Unlink&quot;, &quot;Anchor&quot;], [&quot;Image&quot;, &quot;Flash&quot;, &quot;Table&quot;, &quot;HorizontalRule&quot;], [&quot;TextColor&quot;, &quot;BGColor&quot;], [&quot;Smiley&quot;, &quot;SpecialChar&quot;], [&quot;Source&quot;]], &quot;toolbar&quot;: &quot;full&quot;, &quot;height&quot;: 500, &quot;width&quot;: &quot;auto&quot;, &quot;filebrowserWindowWidth&quot;: 940, &quot;filebrowserWindowHeight&quot;: 725, &quot;filebrowserUploadUrl&quot;: &quot;/ckeditor/upload/&quot;, &quot;filebrowserBrowseUrl&quot;: &quot;/ckeditor/browse/&quot;, &quot;language&quot;: &quot;en-us&quot;}" data-external-plugin-resources="[]" data-id="id_content" data-type="ckeditortype"></textarea>
+                    </div>
+                {% endif %}
+                <small id="help" class="form-text text-muted">
+                        [File Upload]&nbsp;please make a zip file if you have multiple files.
+                </small>
+                <div class="row justify-content-center">
+                    <input type="submit" class="btn btn-info btn-lg" value="Create" />
+                </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+

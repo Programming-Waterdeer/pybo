@@ -30,13 +30,12 @@ from ReRAM.views import base_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('ReRAM/', include('ReRAM.urls')),
+    path('MBE/', include('MBE.urls')),
     path('common/', include('common.urls')),
     path('', base_views.index, name='index'),  # '/' 에 해당되는 path
-    path('admin/', admin.site.urls),
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('admin/filebrowser/', site.urls),
     path('grappelli/', include('grappelli.urls')),
-    path('admin/', admin.site.urls),
     path('ckeditor/upload/', login_required(ckeditor_views.upload), name='ckeditor_upload'),
     path('ckeditor/browse/', never_cache(login_required(ckeditor_views.browse)), name='ckeditor_browse'),
     path('summernote/', include('django_summernote.urls')),

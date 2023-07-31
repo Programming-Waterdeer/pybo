@@ -1,0 +1,9 @@
+<!-- Sidebar  -->
+<br>
+<nav id="sidebar" >
+    <div class="list-group">
+<a class="rounded-0 list-group-item list-group-item-action list-group-item-light {% if category.name == 'logbook'  %}active{% endif %}" href="{% url 'MBE:index' 'logbook' %}">LOGBOOK</a>
+<a class="rounded-0 list-group-item list-group-item-action list-group-item-light {% if category.name == 'maintenance'  %}active{% endif %}" href="{% url 'MBE:index' 'maintenance' %}">Maintenance</a>
+    </div>
+</nav>
+

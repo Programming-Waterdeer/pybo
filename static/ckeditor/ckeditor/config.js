@@ -6,7 +6,7 @@
 CKEDITOR.editorConfig = function( config ){
     config.language = 'en';
     config.uiColor = '#ffffff';
-    config.extraPlugins = 'showborders,filebrowser,tableresize,cellborder';
+    config.extraPlugins = 'showborders,filebrowser,tableresize,cellborder,CustomTemplates';
 
 	// Define changes to default configuration here. For example:
 	// config.language = 'fr';

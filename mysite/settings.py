@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-t2t-h0$8l-a07_c^43-r-0un_69va15t5*m5f72o4bj%k3kk(b
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["130.83.204.76","127.0.0.1"]
+ALLOWED_HOSTS = ["130.83.204.75","127.0.0.1"]
 
 # Application definition
 
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ReRAM.apps.ReRAMConfig',
+    'MBE.apps.MBEConfig',
     'ckeditor',
     'ckeditor_uploader',
     'grappelli',

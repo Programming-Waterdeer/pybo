@@ -5,14 +5,14 @@
 <div class="container-fluid">
     <div class="row">
         <div class = 'col-md-2'>
-            {% include "ReRAM/sidebar.html" %}
+            {% include "MBE/sidebar.html" %}
         </div>
 
 
         <div class="col-md-10">
             <div class="row my-3">
                 <div class="col-6">
-                    <a href="{% url 'ReRAM:question_create' category.name %}" class="btn btn-primary">Make POST</a>
+                    <a href="{% url 'MBE:question_create' category.name %}" class="btn btn-primary">Make POST</a>
                 </div>
 
                 <div class="col-6">
@@ -46,7 +46,7 @@
                         {{ question_list.paginator.count|sub:question_list.start_index|sub:forloop.counter0|add:1 }}
                     </td>
                     <td class="text-start">
-                        <a href="{% url 'ReRAM:detail' question.id %}">{{ question.subject }}</a>
+                        <a href="{% url 'MBE:detail' question.id %}">{{ question.subject }}</a>
                         {% if question.answer_set.count > 0 %}
                         <span class="text-danger small mx-2">{{ question.answer_set.count }}</span>
                         {% endif %}
@@ -112,7 +112,7 @@
         </div>
     </div>
 </div>
-<form id="searchForm" method="get" action="{% url 'ReRAM:index' %}">
+<form id="searchForm" method="get" action="{% url 'MBE:index' %}">
     <input type="hidden" id="kw" name="kw" value="{{ kw|default_if_none:'' }}">
     <input type="hidden" id="page" name="page" value="{{ page }}">
 </form>

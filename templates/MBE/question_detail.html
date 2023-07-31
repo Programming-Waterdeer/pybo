@@ -5,7 +5,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class = 'col-md-2'>
-            {% include "ReRAM/sidebar.html" %}
+            {% include "MBE/sidebar.html" %}
         </div>
         <div class="col-md-10">
             <div class="container my-3">
@@ -45,20 +45,20 @@
                     </div>
                 </div>
                     <div class="my-3">
-                        <a href="javascript:void(0)" data-uri="{% url 'ReRAM:question_vote' question.id  %}"
+                        <a href="javascript:void(0)" data-uri="{% url 'MBE:question_vote' question.id  %}"
                            class="recommend btn btn-sm btn-outline-secondary"> reconmmend
                             <span class="badge rounded-pill bg-success">{{question.voter.count}}</span>
                         </a>
                         {% if request.user == question.author %}
-                            <a href="{% url 'ReRAM:question_modify' question.id %}"
+                            <a href="{% url 'MBE:question_modify' question.id %}"
                                class = "btn btn-sm btn-outline-secondary">modify</a>
                             <a href="javascript:void(0)" class="delete btn btn-sm btn-outline-secondary"
-                            data-uri="{% url 'ReRAM:question_delete' question.id  %}">delete</a>
+                            data-uri="{% url 'MBE:question_delete' question.id  %}">delete</a>
                         {% endif %}
                         {% if question.upload_files %}
                         <div class="col-12 text-right">
                             <span>attached file :&nbsp;</span>
-                            <a href="{% url 'ReRAM:question_download' question.id %}" >{{ question.filename|truncatechars:25 }}</a>
+                            <a href="{% url 'MBE:question_download' question.id %}" >{{ question.filename|truncatechars:25 }}</a>
                         </div>
                         {% endif %}
                     </div>
@@ -81,22 +81,22 @@
                             </div>
                         </div>
                         <div class="my-3">
-                            <a href="javascript:void(0)" data-uri="{% url 'ReRAM:answer_vote' answer.id  %}"
+                            <a href="javascript:void(0)" data-uri="{% url 'MBE:answer_vote' answer.id  %}"
                            class="recommend btn btn-sm btn-outline-secondary"> recommend
                             <span class="badge rounded-pill bg-success">{{answer.voter.count}}</span>
                             </a>
                             {% if request.user == answer.author %}
-                            <a href="{% url 'ReRAM:answer_modify' answer.id  %}"
+                            <a href="{% url 'MBE:answer_modify' answer.id  %}"
                                 class="btn btn-sm btn-outline-secondary">modify</a>
                             <a href="#" class="delete btn btn-sm btn-outline-secondary"
-                                data-uri="{% url 'ReRAM:answer_delete' answer.id  %}">delete</a>
+                                data-uri="{% url 'MBE:answer_delete' answer.id  %}">delete</a>
                             {% endif %}
                         </div>
                     </div>
                 </div>
                 {% endfor %}
                 <!-- 답변 등록 -->
-                <form action="{% url 'ReRAM:answer_create' question.id %}" method="post" class="my-3">
+                <form action="{% url 'MBE:answer_create' question.id %}" method="post" class="my-3">
                     {% csrf_token %}
                             <!-- 오류표시 Start -->
                     {% if form.errors %}
